@@ -42,6 +42,11 @@ export const tabs = [
                 dest: '/managers',
             },
             {
+                icon: 'edit',
+                label: 'Edit Profile',
+                dest: '/profile',
+            },
+            {
                 icon: 'local_fire_department',
                 label: 'Rivalry',
                 dest: '/rivalry',
