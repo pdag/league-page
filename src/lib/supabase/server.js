@@ -6,7 +6,8 @@ import { env } from '$env/dynamic/private';
  * This bypasses RLS for admin operations like verification
  */
 export function createServerSupabaseClient() {
-  const supabaseUrl = env.SUPABASE_URL;
+  // Try both naming conventions (with and without NEXT_PUBLIC prefix)
+  const supabaseUrl = env.SUPABASE_URL || env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseServiceKey = env.SUPABASE_SERVICE_ROLE_KEY;
   
   if (!supabaseUrl || !supabaseServiceKey) {

@@ -12,8 +12,9 @@ export function createSupabaseClient() {
     return supabaseInstance;
   }
 
-  const supabaseUrl = env.PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = env.PUBLIC_SUPABASE_ANON_KEY;
+  // Use NEXT_PUBLIC_ prefixed vars (from Supabase integration) since they're already set
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase credentials not found. Manager profile editing will be disabled.');
